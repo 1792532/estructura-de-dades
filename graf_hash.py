@@ -130,24 +130,25 @@ class GrafHash:
 if __name__ == "__main__":
 
     g = GrafHash(
-        ["A", "B", "C"],
-        [["A", "B"], ["B", "C"]],
+        ["Sants Est.", "Pl. Sants", "Hostafr."],
+        [["Sants Est.", "Pl. Sants"], ["Pl. Sants", "Hostafr."]],
         [1585, 511]
     )
 
-    print(g.has_edge("B", "A"))
-    print(g.weight("A", "B"))
-    print(g.degree("B"))
+    print(g.has_edge("Pl. Sants", "Sants Est."))
+    print(g.weight("Sants Est.", "Pl. Sants"))
+    print(g.degree("Pl. Sants"))
 
-    g.insert_vertex("D")
-    g.insert_edge("C", "D")
+    g.insert_vertex("Esp.")
+    g.insert_edge("Hostafr.", "Esp.")
 
-    print(g.weight("Esp.", "C"))
+    print(g.weight("Esp.", "Hostafr."))
     print(g.num_edges())
 
-    g.remove_vertex("B")
+    g.remove_vertex("Pl. Sants")
 
-    print(g.has_edge("A", "B"))
+    print(g.has_edge("Sants Est.", "Pl. Sants"))
     print(g.num_edges())
-    print(g.degree("A"))
+    print(g.degree("Sants Est."))
     print(sorted(g.vertices()))
+
